@@ -57,11 +57,13 @@
 
         nav a {
             color: white;
-            margin: 0 25px;
+            margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
             transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+            padding: 10px;
         }
 
         nav a:hover {
@@ -95,7 +97,7 @@
         }
 
         .hero h1 {
-            font-size: 5rem;
+            font-size: 4rem;
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -105,19 +107,19 @@
         }
 
         .content {
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
             animation: fadeInUp 1.5s ease-out;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 40px 20px;
+            margin: 20px 10px;
             border-radius: 10px;
         }
 
         .content h2 {
             color: #27ae60;
-            font-size: 2.8rem;
-            margin-bottom: 30px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
             text-transform: uppercase;
@@ -128,15 +130,15 @@
         .content h2::after {
             content: '';
             display: block;
-            width: 80px;
+            width: 60px;
             height: 5px;
             background-color: #27ae60;
-            margin: 10px auto;
+            margin: 8px auto;
             border-radius: 2px;
         }
 
         .content p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.8;
@@ -148,15 +150,15 @@
             flex-wrap: wrap;
             justify-content: center;
             margin: 40px 0;
-            gap: 40px;
+            gap: 20px;
         }
 
         .feature {
             background-color: #ffffff;
             border: 1px solid #ddd;
             border-radius: 15px;
-            padding: 30px;
-            width: 300px;
+            padding: 20px;
+            width: calc(50% - 40px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -170,8 +172,8 @@
 
         .feature h3 {
             color: #27ae60;
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
             text-transform: uppercase;
             font-family: 'Montserrat', sans-serif;
         }
@@ -186,8 +188,8 @@
         .download-button {
             display: inline-block;
             margin-top: 40px;
-            padding: 18px 50px;
-            font-size: 1.3rem;
+            padding: 16px 40px;
+            font-size: 1.2rem;
             color: white;
             background-color: #27ae60;
             text-decoration: none;
@@ -232,12 +234,40 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
             }
 
             .feature {
-                width: 90%;
+                width: calc(100% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .content h2 {
+                font-size: 2rem;
+            }
+
+            .download-button {
+                padding: 12px 30px;
+                font-size: 1rem;
             }
         }
 
@@ -274,10 +304,10 @@
         }
 
         @keyframes rotate {
-            from {
+            0% {
                 transform: rotate(0deg);
             }
-            to {
+            100% {
                 transform: rotate(360deg);
             }
         }
@@ -287,74 +317,56 @@
 <body>
     <header>
         <h1>Greener</h1>
-        <p>Helping You Make the World a Better Place</p>
+        <p>Make a difference, one small step at a time</p>
     </header>
 
     <nav>
-        <a href="#about">About</a>
+        <a href="#about">About Us</a>
         <a href="#features">Features</a>
-        <a href="#team">Our Team</a>
+        <a href="#download">Download</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <div class="hero">
-        <h1>Join the Movement for a Greener Future</h1>
+        <h1>Save the Planet</h1>
     </div>
 
-    <div class="content" id="about">
-        <h2>About Greener</h2>
-        <p>Greener is an app designed to help you reduce waste and promote sustainable living. Whether you're at home or on the go, Greener provides you with tips, tools, and challenges to minimize your environmental footprint.</p>
-    </div>
+    <section class="content" id="about">
+        <h2>About Us</h2>
+        <p>We believe that every small action contributes to a bigger impact on our planet's future. Join us in making a difference by taking simple, effective steps towards a more sustainable world.</p>
+    </section>
 
-    <div class="content" id="features">
+    <section class="content" id="features">
         <h2>Features</h2>
         <div class="features-list">
             <div class="feature">
-                <h3>Waste Tracker</h3>
-                <p>Monitor your daily waste output and track your progress in reducing it over time.</p>
+                <h3>Track Your Impact</h3>
+                <p>Monitor your carbon footprint and receive personalized tips on how to reduce your impact on the environment.</p>
             </div>
             <div class="feature">
-                <h3>Recycling Guide</h3>
-                <p>Find detailed information on how to properly recycle different materials.</p>
+                <h3>Community Challenges</h3>
+                <p>Participate in community-driven challenges to collectively reduce waste and promote greener habits.</p>
             </div>
             <div class="feature">
-                <h3>Eco-friendly Product Finder</h3>
-                <p>Discover sustainable products that are good for the planet and your home.</p>
+                <h3>Eco-friendly Tips</h3>
+                <p>Discover new ways to incorporate eco-friendly practices into your daily life with our curated tips and guides.</p>
             </div>
             <div class="feature">
-                <h3>Daily Challenges</h3>
-                <p>Participate in daily eco-challenges to stay motivated and engaged in your green journey.</p>
-            </div>
-            <div class="feature">
-                <h3>Carbon Footprint Calculator</h3>
-                <p>Calculate your carbon footprint and get tips on how to reduce it effectively.</p>
-            </div>
-            <div class="feature">
-                <h3>Community Events</h3>
-                <p>Join local events and initiatives aimed at making your community greener.</p>
+                <h3>Save Resources</h3>
+                <p>Learn how to save water, energy, and other resources with easy-to-follow instructions and suggestions.</p>
             </div>
         </div>
-        <a href="https://drive.google.com/file/d/14iUs2z1-NLyro7L1Sk832DP_MhrvCNpY/view?usp=drive_link" class="download-button">Download Greener</a>
-    </div>
+    </section>
 
-    <div class="content" id="team">
-        <h2>Our Team</h2>
-        <p>Greener is developed by Group C, we are a team at ashbal misr in the summer camp. Our team includes:</p>
-        <ul style="list-style-type: none; padding: 0; font-size: 1.2rem; color: #555; font-family: 'Roboto', sans-serif;">
-            <li>Hassan Mohamed</li>
-            <li>Habiba Ahmed</li>
-            <li>Ahmed Salah</li>
-            <li>Adham Hisem</li>
-        </ul>
-    </div>
+    <section class="content" id="download">
+        <h2>Get the App</h2>
+        <p>Join the movement towards a greener planet. Download our app today and start making a difference!</p>
+        <a href="#" class="download-button">Download Now</a>
+    </section>
 
-    <div class="content" id="contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or would like to learn more about Greener, please reach out to us at <a href="mailto:hmmmm78@gmail.com">hmmmm78@gmail.com</a>.</p>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Greener. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+    <footer id="contact">
+        <p>&copy; 2024 Greener. All Rights Reserved.</p>
+        <p>Follow us on <a href="#">Instagram</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
     </footer>
 </body>
 
